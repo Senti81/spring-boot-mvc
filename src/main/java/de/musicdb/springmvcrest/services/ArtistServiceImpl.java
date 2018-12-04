@@ -17,11 +17,16 @@ public class ArtistServiceImpl implements ArtistService {
 
     @Override
     public Artist findArtistById(Long id) {
-        return artistRepository.getOne(id);
+        return artistRepository.findById(id).get();
     }
 
     @Override
     public List<Artist> findAllArtists() {
         return artistRepository.findAll();
+    }
+
+    @Override
+    public Artist insertArtist(Artist artist) {
+        return artistRepository.save(artist);
     }
 }

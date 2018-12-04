@@ -18,7 +18,7 @@ public class BootstrapData implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         System.out.println("Loading artists data...");
 
@@ -28,13 +28,13 @@ public class BootstrapData implements CommandLineRunner {
         artistRepository.save(a1);
 
         Artist a2 = new Artist();
-        a1.setName("Boysetsfire");
-        a1.setYearFounded(1995);
+        a2.setName("Boysetsfire");
+        a2.setYearFounded(1995);
         artistRepository.save(a2);
 
         Artist a3 = new Artist();
-        a1.setName("Millencolin");
-        a1.setYearFounded(1992);
+        a3.setName("Millencolin");
+        a3.setYearFounded(1992);
         artistRepository.save(a3);
 
         System.out.println("Artists saved: " +artistRepository.count());

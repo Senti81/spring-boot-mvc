@@ -9,4 +9,6 @@ public interface ArtistService {
     Artist findArtistById(Long id);
 
     List<Artist> findAllArtists();
+
+    Artist insertArtist(Artist artist);
 }

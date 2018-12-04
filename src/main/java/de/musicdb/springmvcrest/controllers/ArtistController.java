@@ -2,17 +2,15 @@ package de.musicdb.springmvcrest.controllers;
 
 import de.musicdb.springmvcrest.entities.Artist;
 import de.musicdb.springmvcrest.services.ArtistService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(ArtistController.BASE_URL)
+@RequestMapping("/api/v1/artists")
 public class ArtistController {
 
-    final static String BASE_URL = "/api/v1/artists";
     private ArtistService artistService;
 
     public ArtistController(ArtistService artistService) {
@@ -20,7 +18,18 @@ public class ArtistController {
     }
 
     @GetMapping
-    List<Artist> getAllArtists() {
+    public List<Artist> getAllArtists() {
         return artistService.findAllArtists();
+    }
+
+    @GetMapping("/{id}")
+    public Artist getArtistById(@PathVariable Long id) {
+        return artistService.findArtistById(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Artist insertArtist(@RequestBody Artist artist) {
+        return artistService.insertArtist(artist);
     }
 }
