@@ -33,9 +33,9 @@ public class ArtistController {
         return artistService.insertArtist(artist);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteArtist(@RequestBody Artist artist) {
-        artistService.deleteArtist(artist);
+    public void deleteArtist(@PathVariable Long id) {
+        artistService.deleteArtist(id);
     }
 }

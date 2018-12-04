@@ -12,5 +12,5 @@ public interface ArtistService {
 
     Artist insertArtist(Artist artist);
 
-    void deleteArtist(Artist artist);
+    void deleteArtist(Long id);
 }
