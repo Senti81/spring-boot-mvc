@@ -29,4 +29,9 @@ public class ArtistServiceImpl implements ArtistService {
     public Artist insertArtist(Artist artist) {
         return artistRepository.save(artist);
     }
+
+    @Override
+    public void deleteArtist(Artist artist) {
+        artistRepository.delete(artist);
+    }
 }

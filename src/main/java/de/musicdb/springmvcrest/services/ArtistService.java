@@ -11,4 +11,6 @@ public interface ArtistService {
     List<Artist> findAllArtists();
 
     Artist insertArtist(Artist artist);
+
+    void deleteArtist(Artist artist);
 }
