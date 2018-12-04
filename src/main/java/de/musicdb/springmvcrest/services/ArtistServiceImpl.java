@@ -2,9 +2,11 @@ package de.musicdb.springmvcrest.services;
 
 import de.musicdb.springmvcrest.entities.Artist;
 import de.musicdb.springmvcrest.repositories.ArtistRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ArtistServiceImpl implements ArtistService {
 
     private final ArtistRepository artistRepository;
